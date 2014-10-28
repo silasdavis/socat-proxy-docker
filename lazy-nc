@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Read in a character, waiting here for at least 1 character
+read -n 1 c
+
+# Pass the arguments along to netcat, then connect the stdout of a subshell
+# that emits the character we captured followed by the rest of the stdin
+nc $@ < <(echo -n "$c"; cat)
