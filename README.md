@@ -1,7 +1,7 @@
-netcat-proxy-docker
+socat-proxy-docker
 ===================
 
-Provides a dead simple netcat-based proxy suitable for proxying tcp ports of existing docker containers.
+Provides a dead simple socat-based proxy suitable for proxying tcp ports of existing docker containers.
 
 This is useful if you want to expose ports of docker containers that are already running where you do not
 have the ability to run them with different port `-p` options, but you can launch new docker containers.
@@ -23,5 +23,5 @@ Example
 For example, to connect to a Java debugger running on 172.17.0.10:5005 you could run:
 
 ```bash
-docker run -p 5005:5005 -e "TARGET=172.17.0.10" -e "PORT=5005" silasdavis/netcat-proxy-docker
+docker run -p 5005:5005 -e "TARGET=172.17.0.10" -e "PORT=5005" silasdavis/socat-proxy
 ```
